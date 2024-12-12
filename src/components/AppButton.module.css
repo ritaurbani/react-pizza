@@ -1,0 +1,8 @@
+.btn {
+    background-color: green;
+    padding: .5rem 1rem;
+    color: white;
+    border: 0;
+}
+
+/* non aggiungo margine al btn ma agli elementi sopra */
