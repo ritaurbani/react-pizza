@@ -1,28 +1,25 @@
 import style from "./PizzaCard.module.css"
 import AppButton from "./AppButton"
+import pizzas from "../data/pizza"
 
-function PizzaCard() {
+function PizzaCard({image, title, description, price, available}) {
+
+const imagePath = `/imgs/${image}`
 
 
-    
-//mettimao dati pizza in maniera dinamica da queso obj statico
-    const pizza = {
-        image: "/imgs/ciambellone.jpeg",
-        title: "Original",
-        description: "Tomato souce, mozzarella & oregano",
-        price: "€ 6.00",
-    };
 
     return (
         <div className={style.card}>
             <div className={style.image}>
-                <img src={pizza.image} alt="" />
+                <img src={imagePath} alt="" />
             </div>
             <div className={style.content}>
-                <h5 className= "mb-1">{pizza.title}</h5>
-                <p className={style.description} >{pizza.description}</p>
-                <div className={`${style.price} mb-1`}>{pizza.price}</div>
-                <AppButton />
+                <h5 className= "mb-1">{title}</h5>
+                <p className={style.description} >{description}</p>
+                <div className={`${style.price} mb-1`}>{price}</div>
+                {/* //se non available non mostrare bottone */}
+                {available && <AppButton text="Add to cart" />}
+                
             </div>
             
             

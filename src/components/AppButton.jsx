@@ -1,11 +1,11 @@
 import style from "./AppButton.module.css"
 
-function AppButton() {
-    const buttonText = "Add to Cart"
+function AppButton({text}) {
+    
 
     return (
         <button className={style.btn}>
-            {buttonText}
+            {text}
         </button>
 
     )
